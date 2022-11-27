@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let MyDate = function(ts_ngay,ts_thang,ts_nam) {
+            this.ngay = ts_ngay;
+            this.thang = ts_thang;
+            this.nam = ts_nam;
+
+            // setter : thiet lap gia tri cua thuoc tinh
+            this.setNgay = function(ts_ngay){
+                this.ngay = ts_ngay;
+            }
+            this.setThang = function(ts_thang){
+                this.thang = ts_thang;
+            }
+              this.setNam = function(ts_nam){
+                this.nam = ts_nam;
+            }
+            // getter: tra ve gia tri thuoc tinh
+            this.getNgay = function() {
+                return this.ngay;
+            }
+            this.getThang = function() {
+                return this.thang;
+            }
+            this.getNam = function() {
+                return this.nam;
+            }
+            this.hien_thi = function() {
+                console.log(this.ngay + '/' + this.thang + '/' + this.nam);
+            }
+        }
+        // khoi tao doi tuong
+        let sieu_sao = new MyDate(24,11,2022);
+        // goi phuong thuc
+        sieu_sao.setNgay(31);
+        sieu_sao.setThang(12);
+        sieu_sao.setNam(2025);
+        // goi phuong thuc tra ve
+        console.log(sieu_sao.getNgay());
+        console.log(sieu_sao.getThang());
+        console.log(sieu_sao.getNam());
+
+        // thiet lap gia tri cua thuoc tinh ngay,thang,nam
+        // sieu_sao.ngay = 24;
+        // sieu_sao.thang = 12;
+        // sieu_sao.nam = 2022;
+
+        // truy cap phuong thuc hien_thi
+        sieu_sao.hien_thi();
+    </script>
+</body>
+</html>

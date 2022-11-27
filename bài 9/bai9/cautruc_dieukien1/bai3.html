@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><b>Bài 3 :</b>Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0.</p>
+    <label for="checkNum">Number :</label>
+    <input type="text" size="10px" id="checkNum">
+    <input type="button" value="Check" onclick="CompareNumAndZero()">
+    <p id="result3"><br></p>
+    <script>
+             let num = parseInt(document.getElementById("checkNum").value);
+            let res = document.getElementById("result3");
+            if (0) {
+                if (num>0){
+                    res.innerHTML = "<b>" + num + " > 0</b>";
+                } else {
+                    res.innerHTML = "<b>" + num + " < 0</b>";
+                }
+            } else {
+                res.innerHTML = "<b>Input must be number !</b>" ;
+            }
+    </script>
+</body>
+</html>

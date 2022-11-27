@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ.</p>
+    <label for="Siêng">Bài Kiểm tra</label>
+    <input type="text" id="Siêng">
+    <label for="Giua kỳ">Thi giữa kỳ</label>
+    <input type="text" id="Giua kỳ">
+    <label for="Cuối kỳ">Thi cuối kỳ</label>
+    <input type="text" id="Cuối kỳ">
+    <input type="button" value="xếp_loại" onclick="xếp_loại()">
+    <p><i></i></p>
+    <p id="result"><br></p>
+    <script>
+          function xếp_loại() {
+            let Bài_kiểm_tra = parseInt(document.getElementById("Siêng").value);
+            let Thi_giữa_kỳ = parseInt(document.getElementById("Giua kỳ").value);
+            let Thi_cuối_kỳ = parseInt(document.getElementById("Cuối kỳ").value);
+            let res = document.getElementById("result");
+            if (isNaN(Bài_kiểm_tra)||isNaN(Thi_giữa_kỳ)||isNaN(Thi_cuối_kỳ)) {
+            } else if ( Bài_kiểm_tra > 10 || Bài_kiểm_tra < 0
+                        || Thi_giữa_kỳ > 10 || Thi_giữa_kỳ < 0 
+                        || Thi_cuối_kỳ > 10 || Thi_cuối_kỳ < 0 ) {
+            } else {
+                let Xếp_loại = ((Bài_kiểm_tra)*2 + (Thi_giữa_kỳ)*2 + (Thi_cuối_kỳ)*6)/10;
+                if (Xếp_loại >= 8 ) {
+                    res.innerHTML = "Xuất sắc"
+                } else if (Xếp_loại < 8 &&Xếp_loại >= 6.5) {
+                    res.innerHTML = "Học lực tốt"
+                } else if (Xếp_loại <6.5 &&Xếp_loại >= 5) {
+                    res.innerHTML = "Học lực trung bình"
+                } else {
+                    res.innerHTML = "Học lực kém"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

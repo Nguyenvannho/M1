@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        /// ve duong thang
+        // ctx.moveTo(0,300);
+        // ctx.lineTo(400,300);
+        // ctx.stroke();
+
+
+        // ve duong tron
+        // ctx.beginPath();
+        // ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        // //      x    y   r      start stop
+        // ctx.stroke();
+
+        // ve hinh chu nhat
+        ctx.fillRect(100, 200, 200, 100)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="string">
+    <button onclick="Nhanvao()">Nhấn vào</button>
+    <script>
+
+        // let so_nguyen = [0,1,2,3,4,5,6,7,8,9,];
+        // var index = 0;
+        // while (index < so_nguyen.length) {
+        //     document.write(so_nguyen[index]);
+        //     index++;
+
+        // }
+
+
+
+        //     let numbers = [3, 4, 5, 200000000, 6,12211,5000,50000];
+        //    let max_numbers = 0;
+        //    for (let i = 1; i < numbers.length; i++) {
+        //     if(max_numbers < numbers[i]){
+        //         max_numbers = numbers[i];
+        //     }
+
+        //    }
+        //    console.log(max_numbers);
+
+        // let tong = 0;
+        // for(let i = 0; i < numbers.length; i++) {
+        //     tong += numbers[i];
+        //     // tong = tong + numbers[i];
+        // }
+        // avg = tong / numbers.length;
+        // console.log(avg);
+
+
+
+
+        // let x = [-1, 2, 1, -9, 5, 10];
+        // let first = 0;
+        // let last = x.length - 1;
+        // while (first < last) {
+        //     let b = x[first];
+        //     x[first] = x[last];
+        //     x[last] = b;
+        //     first++;
+        //     last--;
+        // }
+        // // document.write(x);
+        function Nhanvao() {
+            let a = document.getElementById('string').value;
+            let b = a.split(',')
+
+            let x = [-1, 2, 1, -9, 5, 10];
+            let first = 0;
+            let last = x.length - 1;
+            while (first < last) {
+                let b = x[first];
+                x[first] = x[last];
+                x[last] = b;
+                first++;
+                last--;
+            }
+            document.write(x);
+            console.log(b);
+        }
+    </script>
+</body>
+
+</html>

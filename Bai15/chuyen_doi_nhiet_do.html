@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Temperature = function (nhiet_do, nhiet_do_f) {
+            this.do_c = nhiet_do;
+            this.do_f = nhiet_do_f;
+            //    khai bao doi tuong chuyen doi nhiet do C sang F
+            this.getchuyen_doi = function () {
+                return this.do_c * 9 / 5 + 32
+            }
+                // chuyen doi nhiet do F sang kenvin
+                this.getchuyen_doi_f = function () {
+                    return this.do_f + 273.15
+
+                }
+            }
+        let aa = new Temperature(25,77);
+        document.write("đây là độ F " + aa.getchuyen_doi()+ "<br/>");
+        document.write("đây là độ K " + aa.getchuyen_doi_f());
+
+    </script>
+</body>
+
+</html>

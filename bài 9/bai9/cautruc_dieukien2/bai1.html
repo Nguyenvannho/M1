@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 1 Chuyển từ độ C sang độ F.</p>
+    <label for="độ c">độ c :</label><input type="text" id="độ c">
+    <input type="button" value="đổi" onclick="CquaF()">
+    <p id="Kết quả">Kết quả :</p>
+    <script>
+        function CquaF() {
+            let c = document.getElementById("độ c").value;
+            let res = document.getElementById("Kết quả");
+            if (isNaN(c)) {
+                res.innerHTML = `Đầu vào phải là 1 số`
+            } else {
+                res.innerHTML =  `Kết quả : ${c * 9/5 + 32} °F`
+            }
+        }
+    </script>
+</body>
+</html>

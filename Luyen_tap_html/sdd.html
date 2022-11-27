@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<form>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <p contenteditable=""> Height (in cm)</p>
+        <input type="text" id="height" placeholder="Your height">
+        <p>Weight (in kg)</p>
+        <input type="text" id="weight" placeholder="Your weight">
+        <button type="submit" onclick="result()" id="cal">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <body>
+        <script>
+            var Height1 = document.getElementById('height').value;
+            var Weight2 = document.getElementById('weight').value;
+            var cal = document.getElementById('cal');
+            function Calculate(height, weight){
+            if (height <= 0 || weight <= 0 || isNaN(height) || isNaN(weight)) {
+                alert('béo phì');
+            } else {
+                height = height / 100;
+                let BMI = weight / Math.pow(Height, 2);
+                return bmi;
+            }}
+ function result() {
+    // console.log(123);
+                var height = Height1.value;
+                var weight = Weight2.value;
+                var bmi = Calculate(height, weight);
+                if (bmi < 18)
+                    document.write("Underweight");
+                else if (bmi < 25.0)
+                    document.write("Normal");
+                else if (bmi < 30.0)
+                    document.write("Overweight");
+                else
+                    document.write("Obese");
+            }
+        </script>
+    </body>
+
+</html>

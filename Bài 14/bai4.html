@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("Nhap so vao"));
+        b(number);
+        function b(number) {
+            let a = 0;
+            let b = false;
+            if(number == 0) {
+                alert(number + 'khong la so nguyen to');
+            } else {
+                for(let i = 1; i <= number; i++) {
+                    if(number % i == 0) {
+                        a += 1;
+                    }
+                }
+                if(a == 2) {
+                    b = true;
+                }
+                if (b) {
+                    alert(number + "la so nguyen to");
+                } else {
+                    alert(number + "khong la so nguyen to");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<style>
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .table {
+        border: none;
+        border-collapse: collapse;
+        font-size: 18px;
+    }
+    .input {
+        height: 30px;
+        width: 400px;
+        text-align: left;
+        font-size: 14px;
+        margin: 4px 2px;
+    }
+    tr:nth-child(even) {
+        background-color: lavender;
+    }
+</style>
+<body>
+<h3>Add New Product</h3>
+<input class="input" type="text" id="newProduct" placeholder="New Product">
+<input type="button" class="button" onclick="addRow();" value="Add">
+<h3>Display All Product</h3>
+<table class="table" id="dataTable">
+    <tr>
+        <td style="width: 420px"><h4>Product Name</h4></td>
+        <td style="width: 150px; color: brown; text-align: right; font-weight: bold" id="totalProduct"><h4>3</h4></td>
+        <td style="width: 150px; color: brown"><h4>products</h4></td>
+    </tr>
+   
+</table>
+<script>
+    function addRow() {
+        let newProduct = document.getElementById("newProduct").value;
+        let table = document.getElementById("dataTable");
+        let tableLength = table.rows.length;
+        table.insertRow(tableLength).outerHTML =
+            "<tr id='row" + tableLength + "'>" +
+            "<td id='nameRow" + tableLength + "'>" + newProduct + "</td>" +
+            "<td>" +
+            "<input class='button' type='button' id='editButton" + tableLength + "' value='Edit' onclick='editRow(" + tableLength + ")'>" +
+            "<input class='button' type='button' id='saveButton" + tableLength + "' value='Save' style='display: none' onclick='saveRow(" + tableLength + ")'>" +
+            "</td>" +
+            "<td>" +
+            "<input class='button' type='button' value='Delete' onclick='deleteRow(" + tableLength + ")'>" +
+            "</td>" +
+            "</tr>";
+        document.getElementById("newProduct").value = "";
+        document.getElementById("totalProduct").innerHTML = tableLength;
+    }
+    function editRow(number) {
+        document.getElementById("editButton"+number).style.display="none";
+        document.getElementById("saveButton"+number).style.display="block";
+        let name = document.getElementById("nameRow" + number);
+        let newName = name.innerHTML;
+        name.innerHTML = "<input class='input' type='text' id='nameProduct"+number+"' value='"+newName+"'>";
+    }
+    function saveRow(number) {
+        let nameSave = document.getElementById("nameProduct" + number).value;
+        document.getElementById("nameRow" + number).innerHTML = nameSave;
+        document.getElementById("editButton" + number).style.display="block";
+        document.getElementById("saveButton" + number).style.display="none";
+    }
+    function deleteRow(number) {
+        document.getElementById("row"+number+"").outerHTML="";
+        let count = document.getElementById("totalProduct");
+        let newCount = count.innerHTML - 1;
+        count.innerHTML = newCount;
+    }
+</script>
+</body>
+</html>

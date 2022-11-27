@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 2 Chuyển từ mét sang feet:</p>
+    <label for="mét">mét :</label><input type="text" id="mét">
+    <input type="button" value="Convert" onclick="mettofeed()">
+    <p id="Kết quả">Kết quả :</p>
+    <script>
+           function mettofeed() {
+            let m = document.getElementById("mét").value;
+            let res = document.getElementById("Kết quả");
+            if (isNaN(m)) {
+                res.innerHTML = `Đầu vào phải là 1 số`
+            } else {
+                res.innerHTML =  `Kết quả : ${m * 3.2808} ft`
+            }
+        }
+    </script>
+</body>
+</html>

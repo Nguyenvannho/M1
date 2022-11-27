@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+
+<body>
+    <p onclick="do_something()">Click me</p>
+    <p onclick="clickFunction()" id="demo">Click</p>
+</body>
+
+</html>
+<script>
+    function do_something() {
+        alert("hello world");
+    }
+    var demo = document.getElementById("demo");
+    demo.addEventListener("click", clickFunction());
+    function clickFunction() {
+        alert("Chao cac ban toi ten la mativadou ");
+    }
+</script>

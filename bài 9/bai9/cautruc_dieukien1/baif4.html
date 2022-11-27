@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p><b>Bài 4 :</b> Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó.</p>
+<label for="a">Number 1:</label>
+<input type="text" size="10px" id="a">
+<label for="b">Number 2:</label>
+<input type="text" size="10px" id="b">
+<label for="c">Number 3:</label>
+<input type="text" size="10px" id="c">
+<input type="button" value="Check" onclick="findMax()">
+<p id="result4"><br></p>
+<body>
+    <script>
+         function findMax() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let c = parseInt(document.getElementById("c").value);
+            let res = document.getElementById("result4");
+            if (isNaN(a)||isNaN(b)||isNaN(c)) {
+
+            } else {
+                if (a>b) {
+                    if (a>c) {
+                        res.innerHTML = "Số 1 là số lớn nhất"
+                    } else {
+                        res.innerHTML = "Số 3 là số lớn nhất"
+                    }
+                } else {
+                    if (b>c) {
+                        res.innerHTML = "Số 2 là số lớn nhất"
+                    } else {
+                        res.innerHTML = "Số 3 là số lớn nhất"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

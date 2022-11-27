@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <input type="text" id="xu_li">
+    <button onclick="add()"> Add</button>
+    <button onclick="display()"> Display</button>
+    <p>Display All Product</p>
+    <div id="kq"></div>
+    <script>
+        var a = [];
+        function add() {
+            let b = document.getElementById("xu_li").value;
+            a.push(b);
+            document.getElementById("xu_li").value = ''
+            alert( 'them thanh cong');
+        }
+        function display() {
+            let table="<table border='1' width='300' cellspacing='0' cellpadding='15'>";
+                table= table + "<tr>"
+                table= table + "<th> ten san pham</th>";
+                table= table + "<th >thao tac</th>";
+                table= table + "</tr>"
+            for (var i =0; i<a.length; i++) {
+                table = table + '<tr>';
+                table = table + '<td>' + a[i] + '</td>'
+                table = table + '<td>' + 'them'+ '</td>'
+                table = table + '<td>' + 'xoa'+ '</td>'
+                table = table + '</tr>';
+            }
+            table = table + '</table>';
+            document.getElementById('kq').innerHTML = table;
+        }
+    </script>
+</body>
+</html>!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <input type="text" id="xu_li">
+    <button onclick="add()"> Add</button>
+    <button onclick="display()"> Display</button>
+    <p>Display All Product</p>
+    <div id="kq"></div>
+    <script>
+        var a = [];
+        function add() {
+            let b = document.getElementById("xu_li").value;
+            a.push(b);
+            document.getElementById("xu_li").value = ''
+            alert( 'them thanh cong');
+        }
+        function display() {
+            let table="<table border='1' width='300' cellspacing='0' cellpadding='15'>";
+                table= table + "<tr>"
+                table= table + "<th> ten san pham</th>";
+                table= table + "<th >thao tac</th>";
+                table= table + "</tr>"
+            for (var i =0; i<a.length; i++) {
+                table = table + '<tr>';
+                table = table + '<td>' + a[i] + '</td>'
+                table = table + '<td>' + 'them'+ '</td>'
+                table = table + '<td>' + 'xoa'+ '</td>'
+                table = table + '</tr>';
+            }
+            table = table + '</table>';
+            document.getElementById('kq').innerHTML = table;
+        }
+    </script>
+</body>
+</html>

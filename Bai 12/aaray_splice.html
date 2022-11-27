@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arrs = ["code", "Gym", "Vn"];
+        console.log(arrs);
+        arrs.splice(1,1);
+        console.log(arrs);
+        var students = [
+            {
+                id:1,
+                name:"Nguyen Van A",
+                address:"Ha Loi"
+            },
+            {
+                id:2,
+                name:"Nguyen Van B",
+                address:"Binh Dinh"
+            }
+        ]
+        console.log(students);
+        for(let i = 0; i < students.length;i++){
+            if(students[i].id == 2){
+                students.splice(i, 1);
+            }
+        }
+        console.log(students);
+    </script>
+</body>
+</html>

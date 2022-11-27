@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 6 Giải phương trình bậc 1 dạng ax + b = 0</p>
+    <label for="a6">a :</label><input type="text" id="a6">
+    <label for="b6">b :</label><input type="text" id="b6">
+    <input type="button" value="tính toán" onclick="phuongtrinh()">
+    <p id="kết quả">Kết quả:<br></p>
+    <script>
+        function phuongtrinh() {
+            let a = document.getElementById("a6").value;
+            let b = document.getElementById("b6").value;
+            let res = document.getElementById("kết quả");
+            if (isNaN(a)||isNaN(b)) {
+                res.innerHTML = `Dữ liệu không hợp lệ`;
+            }
+            else if (a == 0 && b == 0){
+                res.innerHTML = `Phương trình vô số nghiệm`;
+            }
+            else if (a != 0 && b == 0){
+                res.innerHTML = `Phương trình có nghiệm x = 0`;
+            }
+            else if (a == 0 && b != 0){
+                res.innerHTML = `Phương trình vô nghiệm`;
+            }
+            else {
+                res.innerHTML = `Phương trình có nghiệm x = ${-b/a}`;
+            }
+        }
+    </script>
+</body>
+</html>

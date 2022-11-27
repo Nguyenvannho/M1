@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập </title>
+</head>
+<body>
+<script>
+    let stringUser;
+    let N;
+
+    function initString() {
+        stringUser = prompt('nhap dai di cung duoc : ');
+    }
+
+    function findAndReplace() {
+        let i;
+        let j = 0;
+        let newString = '';
+
+        for (i = 0; i < stringUser.length; i++) {
+            if (stringUser[i] == '-') {
+                newString += stringUser.substr(j, i - j);
+                newString += '_';
+                j=i+1;
+            }
+        }
+        newString += stringUser.substr(j, stringUser.length - j);
+    alert(newString);
+        document.write('Số từ trong chuỗi là: ' + count);
+    }
+
+
+    function main() {
+        initString();
+        findAndReplace();
+    }
+
+    main();
+
+</script>
+</body>
+</html>

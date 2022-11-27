@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 4 Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</p>
+    <label for="hinhchunhata">a :</label><input type="text" id="hinhchunhata">
+    <label for="hinhchunhatb">b :</label><input type="text" id="hinhchunhatb">
+    <input type="button" value="tính toán" onclick="hinhchunhat()">
+    <p id="kết quả">kết quả:</p>
+    <script>
+        function hinhchunhat() {
+            let hinhchunhata = document.getElementById("hinhchunhata").value;
+            let hinhchunhatb = document.getElementById("hinhchunhatb").value;
+            let res = document.getElementById("kết quả");
+            if (isNaN(hinhchunhata)||isNaN(hinhchunhatb)) {
+                res.innerHTML = `Đầu vào là 1 số`
+            } else {
+                res.innerHTML =  `kết quả : ${hinhchunhata*hinhchunhatb} m²`
+            }
+        }
+    </script>
+</body>
+</html>

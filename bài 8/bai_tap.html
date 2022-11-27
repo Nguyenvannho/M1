@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(var i = 1; i <=100; i++) {
+        //     if(i <= 99)
+        //     document.write(i + '-');
+
+        // }
+        // var nhiet_do = parseInt = prompt('nhap vao');
+        // if( nhiet_do > 100) {
+        //     document.write('Giam nhiet do');
+        // } else if(nhiet_do < 20) {
+        //     document.write('Tang nhiet do');
+        // }
+    
+            let a;
+            for(a = 1;a <= 100;a++){
+                if(a % 3 == 0 && a % 5 !== 0){
+                    document.write('fizz'  + '<br>');
+                    continue;
+                }
+                else if(a % 3 !== 0 && a % 5 == 0){
+                    document.write('buzz'  + '<br>');
+                    continue;
+                }
+                else if(a % 3 == 0 && a % 5 == 0){
+                    document.write('fizzbuzz' + '<br>');
+                    continue;
+                    
+                }
+                document.write(a + '<br>');
+            }
+    </script>
+</body>
+</html>

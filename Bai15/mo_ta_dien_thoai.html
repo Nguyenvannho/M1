@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Mobile = function(name) {
+            this.name = name;
+            // thuoc tinh
+            this.trang_thai_dien_thoai = false;
+            this.trang_thai_pin = 0;
+            this.tin_dang_soan_thao = "";
+            this.hop_thu_den = [];
+            this.hop_thu_di = [];
+            // phuong thuc
+            this.kiem_tra = function() {
+                if(this.trang_thai_dien_thoai==false) {
+                    console.log('dien thoai dang tat');
+                } else {
+                    console.log("dien thoai dang bat");
+                }
+            }
+            this.bat = function() {
+                this.trang_thai_dien_thoai = true
+            }
+            this.tat = function() {
+                this.trang_thai_dien_thoai = false
+            }
+            this.sac_pin = function() {
+                this.trang_thai_pin++;
+            }
+            this.soan_tin_nhan = function(noi_dung) {
+                if(this.trang_thai_dien_thoai == false){
+                    this.kiem_tra();
+                    return false;
+                }
+                this.tin_dang_soan_thao = noi_dung;
+                this.trang_thai_pin--;
+            }
+            this.nhan_tin_nhan = function(){
+                // luu vao hop thu den
+                this.hop_thu_den.push(noi_dung)
+                this.trang_thai_pin--;
+            }
+            this.gui_tin_nhan = function(dien_thoai){
+                // luu vao hop thu di
+                this.hop_thu_di.push(this.tin_dang_soan_thao);
+                this.trang_thai_pin--;
+                // dien thoai b nhan tin nhan
+                dien_thoai.nhan_tin_nhan = (this.tin_dang_soan_thao);
+                this.trang_thai_pin--;
+                // xoa tin dang soan
+                this.tin_dang_soan_thao = ""
+                this.trang_thai_pin--;
+            }
+            this.xem_hop_thu_den = function () {
+                console.log(this.hop_thu_den);
+                this.trang_thai_pin--;
+            }
+            this.xem_hop_thu_di = function () {
+                console.log(this.hop_thu_di);
+                this.trang_thai_pin--;
+            }
+        
+        }
+        // khoi tao doi tuong
+        let iphone = new Mobile('Iphone');
+        let samsung = new Mobile('Samsung');
+        for(let i = 1;i<=100;i++){
+            iphone.sac_pin();
+            samsung.sac_pin();
+        }
+            console.log(iphone.name);
+            iphone.bat();
+            iphone.soan_tin_nhan("Xin chao sam sung nha");
+            iphone.gui_tin_nhan(samsung);
+            iphone.xem_hop_thu_di();
+            
+            console.log(samsung.name);
+            samsung.bat();
+            samsung.xem_hop_thu_den();
+            console.log(iphone);
+            console.log(samsung);
+
+    </script>
+</body>
+</html>

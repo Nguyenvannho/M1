@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="simple-interest">
+        <!-- <h2>Simple Interest Calculator</h2> -->
+        <form id="calculate">
+            <label for="principal" class="principal">
+                <!-- <p class="brz-css-bedky">
+                    <strong class="brz-cp-color2">Loan Amount   <i class="fa fa-usd" aria-hidden="true"></i></strong>
+                </p> -->
+                <div class="brz-forms2__item brz-css-xpkoa brz-css-jglan brz-css-proqr brz" style="padding: 0px 7.5px 15px 7.5px;">
+                <input id="principal" type="text" placeholder="Loan Amount " class="investment-class-form" />
+            </div>
+            </label>
+    
+            <label for="time">
+                <!-- <p class="brz-css-bedky">
+                    <strong class="brz-cp-color2">Loan Term (years) <i class="fa fa-clock-o" aria-hidden="true"></i></strong>
+                </p> -->
+                <div class="brz-forms2__item brz-css-xpkoa brz-css-jglan brz-css-proqr brz" style="padding: 0px 7.5px 15px 7.5px;">
+                    <input id="time" type="number" placeholder="Loan Term (years)" class="investment-class-form"/>
+                </div>
+                
+            </label>
+    
+            <label for="rate" class="rate">
+                <!-- <p class="percent brz-css-bedky">
+                    <strong class="brz-cp-color2">Interest(%)</strong>
+                </p> -->
+                <div class="brz-forms2__item brz-css-xpkoa brz-css-jglan brz-css-proqr brz" style="padding: 0px 7.5px 15px 7.5px;">
+                <input id="rate" type="text" placeholder="Interest(%)" class="investment-class-form"/>
+            </div>
+            </label> 
+            <label for="time">
+                <div>
+            <button class="button investment-button" type="submit">Submit </button>
+            </div>
+            </label>
+            
+        </form>
+        
+        <div class="results hide">
+            <div class="monthly-payment">
+                <p class="brz-css-gdlup">
+                <span class="investment-list"><strong>Summary of monthly installments:</strong></span>
+                <span class="investment-list" id="payment"></span>
+            </p>
+            </div>
+    
+            <div class="total-interest" >
+                <p class="brz-css-gdlup">
+                <span class="investment-list"><strong>Summary of interest balance:</strong></span>
+                <span class="investment-list" id="interest"></span>
+            </p>
+            </div>
+            <div class="total-amount" >
+                <p class="brz-css-gdlup">
+                <span class="investment-list"><strong>Total amount:</strong></span>
+                <span class="investment-list" id="total"></span>
+            </p>
+            </div> 
+        </div>
+    </div>
+    
+    <script>
+        const simpleInterest = document.querySelector('.simple-interest');
+const button = document.querySelector('.button');
+//const loading = document.querySelector('.loader');
+const results = document.querySelector('.results');
+
+function calculateResults(e) {
+    // ui elements
+    const principal = document.querySelector('#principal');
+    const rate = document.querySelector('#rate');
+    const time = document.querySelector('#time');
+    const monthlyPayment = document.querySelector('#payment');
+    const totalInterest = document.querySelector('#interest');
+    const totalAmount = document.querySelector('#total');
+    // formula variables
+    const p = parseFloat(principal.value);
+    const r = parseFloat(rate.value);
+    const t = parseFloat(time.value);
+    
+    // calculate total interest
+    const interest = (p*t*r/100);
+    // calculate monthly payment
+    const payment = ((interest + p) / (t * 12)).toFixed(2);
+    // calculate total amount paid
+    const total = (interest + p).toFixed(2);
+    
+    if (isFinite(payment)) {
+        totalInterest.innerHTML = (interest).toFixed(2) + 'บาท';
+        monthlyPayment.innerHTML = payment + 'บาท';
+        totalAmount.innerHTML = total+ 'บาท';
+        // hide loader
+        button.classList.remove('loading');
+        // show results
+        results.classList.remove('hide');
+    } else {
+        // show error
+        showError('Please check your numbers and try again.');
+        // hide loader
+        button.classList.remove('loading');
+    }
+}
+
+function showError(error) {
+    // create error
+    const errorMessage = document.createElement('div');
+    const calculate = document.querySelector('#calculate');
+
+    errorMessage.className = 'error';
+    errorMessage.appendChild(document.createTextNode(error));
+    simpleInterest.insertBefore(errorMessage, calculate);
+    // clear error
+    setTimeout(clearError, 3000);
+}
+
+function clearError() {
+    // remove error
+    document.querySelector('.error').remove();
+}
+
+button.addEventListener('click', (e) => {
+    console.log('Calculating...');
+    // show loader
+    button.classList.add('loading');
+    
+    // set timeout
+    setTimeout(calculateResults, 2000);
+    
+    // prevent page from reloading on submit
+    e.preventDefault();
+});
+    </script>
+</body>
+</html>

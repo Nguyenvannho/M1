@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 5 Tính diện tích tam giác vuông khi biết 02 cạnh a, b.</p>
+    <label for="goctamgiaca">a :</label><input type="text"  id="goctamgiaca">
+    <label for="goctamgiacb">b :</label><input type="text"  id="goctamgiacb">
+    <input type="button" value="tính toán" onclick="tamgiacvuong()">
+    <p id="kết quả">Kết quả:</p>
+    <script>
+        function tamgiacvuong() {
+            let goctamgiaca = document.getElementById("goctamgiaca").value;
+            let goctamgiacb = document.getElementById("goctamgiacb").value;
+            let res = document.getElementById("kết quả");
+            if (isNaN(goctamgiaca)||isNaN(goctamgiacb)) {
+                res.innerHTML = `Đầu vào phải là 1 số`;
+            } else {
+                res.innerHTML =  `kết quả: ${(goctamgiaca*goctamgiacb)/2} m²`
+            }
+        }
+    </script>
+</body>
+</html>

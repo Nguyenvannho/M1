@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('bat dau');
+        for (let cnt = 2; cnt <= 9; cnt++) {
+
+            /*
+            cnt:2
+            k:1
+            k:2
+            k:3
+            k:4
+            k:5
+            cnt:3
+            k:6
+            k:7
+            k:8
+            k:9
+            */
+            console.log('=== cnt:' + cnt);
+            for (let k = 1; k <= 5; k++) {
+                console.log(cnt + ' x ' + k + ' = ' + (cnt * k));
+            }
+            console.log('============');
+        }
+        console.log('ket thuc');
+    </script>
+</body>
+
+</html>

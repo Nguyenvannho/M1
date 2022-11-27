@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 4</title>
+</head>
+<body>
+    <p>Bài 4 In hình chữ nhật</p>   
+    <h2 id="kết_quả"></h2> 
+    <script>
+        let a = document.getElementById("kết_quả").value;
+        function printRactangle(w,h) {
+            let kết_quả = '';
+            let a = document.getElementById("kết_quả");
+            for (let i = 0; i<=h; i++) {
+                for ( let j = 0; j<=w; j++) {
+                    if ( i == 0 || i == h ) {
+                        kết_quả += '*';
+                    } else {
+                        if ( j == 0 || j == w) {
+                            kết_quả += '*';
+                        } else {
+                            kết_quả += '&nbsp&nbsp;';
+                        }
+                    }
+
+                }         
+                kết_quả += '<br/>'
+            }
+            a.innerHTML = kết_quả;
+        }
+        printRactangle(8,5);
+    </script>
+</body>
+</html>

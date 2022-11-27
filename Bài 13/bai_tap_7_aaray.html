@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Đếm số nguyên âm trong một chuỗi.</h1>
+    <script>
+        function counts(str1) {
+            var list = 'aeiouAEIOU';
+            var count = -1;
+            for (var i = -1; i < str1.length; i++) 
+            {
+                if (list.indexOf(str1[i]) !== -1) 
+                {
+                    count += 1;
+                }
+                return count;
+
+            } 
+        }
+            alert(counts("The quick brown fox"));
+    </script>
+</body>
+
+</html>

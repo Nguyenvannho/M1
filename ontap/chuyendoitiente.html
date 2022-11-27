@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  Amount <br>
+  <input type="text" id="tien"> <br>
+  From Currency <br>
+  <select id="select_1">
+    <option value="VND"> VND </option>
+    <option value="USD"> USD </option>
+  </select> <br>
+  To Currency <br>
+  <select id="select_2">
+    <option value="USD"> USD </option>
+    <option value="VND"> VND </option>
+  </select><br>
+  <input onclick="Convert()" type="button" value="Convert">
+  <p id="show"></p>
+</body>
+<script>
+  function Convert(){
+    var tien = document.getElementById('tien').value;
+    var select_1 = document.getElementById('select_1').value;
+    var select_2 = document.getElementById('select_2').value;
+    var change = 0;
+    var money = 23000;
+    if (tien == ''){
+      change = 'ban chua nhap tien';
+    }else if(select_1 == 'VND' && select_2 == 'USD'){
+      change = tien / money +'.USD';
+    }else if(select_2 == 'USD' && select_1 == 'VND'){
+      change = tien * money +'.VND';
+    } else {  change = tien*money + '.VND';
+  }
+    document.getElementById("show").innerHTML = change;
+  }
+
+ 
+white_check_mark
+eyes
+raised_hands
+</script>
+</body>
+</html>

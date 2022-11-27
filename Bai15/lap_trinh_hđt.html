@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Student(id, name, address){
+        //     this.id = id;
+        //     this.name = name;
+        //     this.address = address;
+        //     this.getInfor = function() {
+        //         return "id=" + this.id + "name=" + this.name + "address=" + this.address;
+        //     }
+        // }
+        // let student = new Student(1," Nguyen van A ", 'Ha Loi');
+        // console.log(student.getInfor());
+        // let student = {
+        //     id: 1,
+        //     name: "Nguyen van A",
+        //     address: "Ha Loi",
+        //     getInFor: function () {
+        //         return "id=" + this.id + "name=" + this.name + "address=" + this.address;
+        //     }
+        // }
+        // console.log(student.name);
+        // console.log(student.getInfor());
+
+        // cú pháp đối tượng:
+        // gồm 2 cách cơ bản:
+        // var Car = new Object();
+        // var Car = {};
+        // cách khởi tạo đối tượng thông tin của bản thân:
+    //    let Student = { 
+    //     name : 'Nguyễn Văn Nho',
+    //     age : 18,
+    //     address : 'Triệu Phong, Quảng Trị 74 Quê Ta Miền Đất Đỏ BAZAN',
+    //     work : function(){
+    //         return "Học Sinh";
+    //     },
+    //     relax : function(){
+    //         return "Fan bóng đá đội tuyển Đan Mạch và Bắt Kèo Bóng Đá";
+    //     },
+    //       getInfor:function (){
+    //         return "tên " + this.name + " tuổi " + this.age + " address " + this.address + " work " + this.work + " relax " + this.relax ;
+    //       }
+    //    }
+    //    console.log(Student.getInfor());
+
+       // cú pháp khởi tạo lớp:
+//        class MyClass {
+//   // Hàm khởi tạo
+//   constructor() {}
+//   // Các phương thức
+//   method1() {}
+//   method2() {} 
+//   method3() {}
+
+// }    /// tạo phương thức tạo thuộc tính:
+function Student(id, name, address){
+            this.id = id;
+            this.name = name;
+            this.address = address;
+            this.getInfor = function() {
+                return "id=" + this.id + "name=" + this.name + "address=" + this.address;
+            }
+        }
+
+        /// khởi tạo đối tượng truy cập thuộc tính,truy cập phương thức.
+        let student = {
+            id: 1,
+            name: "Nguyen van A",
+            address: "Ha Loi",
+            getInFor: function () {
+                return "id=" + this.id + "name=" + this.name + "address=" + this.address;
+            }
+        }
+        console.log(student.name);
+        console.log(student.getInfor());
+
+    </script>
+</body>
+
+</html>

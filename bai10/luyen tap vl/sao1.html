@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        *
+        * *
+        * * *
+        * * * *
+        * * * * *
+        * h:1
+        *   c:1
+        * h:2
+        *   c:1
+        *   c:2
+        * h:3
+        *   c:1
+        *   c:2
+        *   c:3
+        * h:4
+        *   c: 1
+        *   c: 2
+        *   c: 3
+        *   c: 4
+        * h:5
+        *   c: 1
+        *   c: 2
+        *   c: 3
+        *   c: 4
+        *   c: 5
+        */
+       for (let h =1;h <= 5;h++) {
+        let stop = h;
+        for (let c = 1;c <= h;c++) {
+            document.write(' * ');
+        }
+        document.write('<br>');
+    }
+    </script>
+</body>
+
+</html>

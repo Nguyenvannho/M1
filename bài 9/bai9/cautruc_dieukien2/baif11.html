@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div class="row">
+    <div class="col1">
+      <label for="income">Thu Nhập </label>
+    </div>
+    <div class="col2">
+      <input type="number" name="income" min="0" id="income" required><br>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col1">
+      <label for="wealth">Sự Giau có</label>
+    </div>
+    <div class="col2">
+      <input type="number" name="wealth" min="0" id="wealth" required><br>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col1">
+      <label for="tax">Thuế</label>
+    </div>
+    <div class="col2">
+      <input type="number" name="tax" min="0" id="tax" disabled>
+    </div>
+  </div>
+<body>
+    <script>
+        var incomeEl = document.getElementById('income')
+var wealthEl = document.getElementById('wealth')
+var taxEl    = document.getElementById('tax');
+
+function calculate() {  
+  var incomeTax = 0.35 * incomeEl.value;
+  var wealthTax = 0.25 * wealthEl.value;
+  var tax =  incomeTax + wealthTax;
+  taxEl.value = Math.round(tax * 100) / 100;
+}
+
+incomeEl.addEventListener('input', calculate);
+wealthEl.addEventListener('input', calculate);
+    </script>
+</body>
+</html>

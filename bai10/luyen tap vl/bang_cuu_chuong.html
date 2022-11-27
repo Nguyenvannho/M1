@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Bảng Cửu Chương</h1>
+
+<body>
+    <script>
+        let a = '<table border= 1>'
+        for (let i = 1; i <= 9; i++) {
+            a += '<tr>';
+            for (let j = 2; j <= 9; j++) {
+             a += '<td>' + j + ' * ' + i + ' = ' + i * j + '</td>';
+            }
+            '<tr>';
+        }
+        a += '</tr>';
+        document.write(a);
+    </script>
+</body>
+
+</html>

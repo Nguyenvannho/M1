@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cong(a, b) {
+            return ket_qua = a + b
+        } 
+        function tru(a, b) {
+            return ket_qua =  a - b
+        } 
+        function nhan(a, b) {
+            return ket_qua = a * b
+        } 
+        function chia(a, b) {
+            return ket_qua = a / b
+        } 
+        let a = parseInt(prompt('nhap a'));
+        let pheptinh = prompt('pheptinh');
+        let b = parseInt(prompt('nhap b'));
+        let ket_qua;
+        switch (pheptinh) {
+            case '+' :
+                cong(a, b)
+                console.log(ket_qua); 
+            break;
+            case '-' :
+                tru(a, b)
+                console.log(ket_qua);
+            break;
+            case '*' :
+                nhan(a, b)
+                console.log(ket_qua);
+            break;
+            case '/' :
+                chia(a, b)
+                console.log(ket_qua);
+            break;
+            default:
+        }
+        
+
+    </script>
+</body>
+</html>

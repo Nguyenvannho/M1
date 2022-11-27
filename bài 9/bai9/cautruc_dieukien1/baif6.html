@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng.</p>
+    <label for="Bán">Bán:(VND)</label>
+    <input type="text" size="10px" id="Bán">
+    <label for="Số_lượng">Số_lượng:(VND)</label>
+    <input type="text" size="10px" id="Số_lượng">
+    <input type="button" value="loi_ich" onclick="loi_ich()">
+    <p id="result6"><br></p>
+    <script>
+           function loi_ich() {
+            let Bán = parseInt(document.getElementById("Bán").value);
+            let Số_lượng = parseInt(document.getElementById("Số_lượng").value);
+            let res = document.getElementById("result6");
+            if (isNaN(Bán)==true || isNaN(Số_lượng)==true) {
+            } else {
+                if (Bán > Số_lượng) {
+                    res.innerHTML = "loi_ich bằng 30% Bán" + Bán +"VND";
+                } else {
+                    res.innerHTML = "loi_ich bằng 10% Bán" + Bán +"VND";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>select a new car from the lish.</p>
+    <select id="mySelect" onchange="do_something()">
+        <option value="Audi">Audi
+        <option value="Mecedes"> meceedes
+        <option value="BMW">BMW
+        <option value="Vovlo">Vovlo
+    </select>
+    <script>
+        var selectedElement = document.getElementById('mySelect');
+        selectedElement.addEventListener('change',changeFunction);
+        function changeFunction() {
+            var selectedValue = document.getElementById('mySelect').value;
+            alert(selectedValue);
+        }
+    </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">This is a text</p>
+    <script>
+        var demo = document.getElementById("demo"); 
+         demo.addEventListener("mousemove",mouseover);
+        demo.addEventListener("mouseout",mouseout);
+
+        function mouseover() {
+            document.getElementById("demo").style.color = "red";
+        }
+        function mouseout() {
+            document.getElementById("demo").style.color = "orange";
+        }
+    </script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+    <p onclick="do_something()">Click me</p>
+</body>
+</html>
+<script>
+    function do_something() {
+        alert("hello world");
+    }
+</script> -->

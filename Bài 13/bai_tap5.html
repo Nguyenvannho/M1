@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="string">Nhập từ: </label>
+    <input type="text" name="" id="string">
+    <button onclick="transcript()">Dịch</button>
+    <p id="result"></p>
+    <script>
+        function transcript() {
+            let england = ['banana', 'apple', 'orange', 'pen', 'pencil', 'book'];
+            let vietnam = ['chuối', 'táo', 'cam', 'bút', 'bútchì', 'sách'];
+            let string = document.getElementById("string").value;
+            let index_england = 0;
+            let result = "";
+            for (let i = 0; i < england.length; i++) {
+                if (string == england[i]) {
+                    index_england = i;
+                    for (let j = 0; j < vietnam.length; j++) {
+                        if (index_england == j) {
+                            result = vietnam[j];
+                        }
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=etuổi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 8 Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</p>
+    <label for="tuoi">tuoi :</label><input type="text" id="tuoi">
+    <input type="button" value="kiem tra" onclick="tuoi()">
+    <p id="kết quả"></p>
+    <hr>
+    <script>
+        function tuoi() {
+            let tuoi = document.getElementById("tuoi").value;
+            let res = document.getElementById("kết quả");
+            if (isNaN(tuoi)) {
+                res.innerHTML = "dữ liệu không hợp lệ"
+            } else if ( tuoi >120 || tuoi<0) {
+                res.innerHTML = "dữ liệu nhập vào không phải tuổi"
+            } else {
+                res.innerHTML = "dữ liệu nhập vào là tuổi"
+            }
+        }
+    </script>
+</body>
+</html>

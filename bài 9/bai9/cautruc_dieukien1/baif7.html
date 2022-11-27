@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Bài 7 Tính cước điện thoại cho một hộ gia đình với các thông số đã cho.</p>
+    <label for="Thuế">Thuế:</label>
+    <input type="text" id="Thuế">
+    <label for="Số_lượngNum">Số_lượng:</label>
+    <input type="text" id="Số_lượngNum">
+    <input type="button" value="Trả tiền" onclick="Pay()">
+    <p id="result"><br></p>
+    <script>
+        function Pay() {
+            let Thuế = parseInt(document.getElementById("Thuế").value);
+            let Số_lượng = parseInt(document.getElementById("Số_lượngNum").value);
+            let res = document.getElementById("result");
+            if (isNaN(Thuế)==true || isNaN(Số_lượng)==true) {
+                res.innerHTML = "Đầu vào phải là 1 số";
+            } else {
+                res.innerHTML = "Tổng phải trả tiền" + Thuế*Số_lượng;
+            }
+        }
+    </script>
+</body>
+
+</html>

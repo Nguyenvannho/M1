@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 7 Giải phương trình bậc 2 dạng ax² + bx + c = 0</p>
+    <label for="a7">a :</label><input type="text" id="a7">
+    <label for="b7">b :</label><input type="text" id="b7">
+    <label for="c7">c :</label><input type="text" id="c7">
+    <input type="button" value="Tinh toán" onclick="phuongtrinh()">
+    <p id="kết quả"> Kết quả :</p>
+    <script>
+           function phuongtrinh() {
+            let a = document.getElementById("a7").value;
+            let b = document.getElementById("b7").value;
+            let c = document.getElementById("c7").value;
+            let res = document.getElementById("kết quả");
+            if (isNaN(a)||isNaN(b)||isNaN(c)) {
+                res.innerHTML = "Dữ liệu không hợp lệ"
+            } else {
+                let delta = b*b -4*a*c;
+                if (delta == 0) {
+                    res.innerHTML = `Phương trình có nghiệm kép ${-b/(2*a)}`;
+                } else if (delta < 0) {
+                    res.innerHTML = `Phương trình vô nghiệm`
+                } else {
+                    let x1=(-b-Math.sqrt(delta))/(2*a);
+                    let x2=(-b+Math.sqrt(delta))/(2*a);
+                    res.innerHTML = `Phương trình có 2 nghiệm phân biệt : ${x1} ;  ${x2}`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

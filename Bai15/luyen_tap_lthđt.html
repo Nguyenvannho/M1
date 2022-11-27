@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   // Khởi tạo constructor
+function Person(name,age,color)
+{
+    this.name = name;
+    this.age= age;
+    this.color = color;
+}
+// Tạo đối tượng PersonThanh
+var PersonThanh= new Person("Thanh",19,"Black");
+//Tạo đối tượng PersonNam
+var PersonNam= new Person("Nam",19,"White");
+docunment.write(PersonThanh.name);
+
+//Khởi tạo đối tượng PersonThanh
+var PersonThanh= {
+name: 'Thanh',
+age: 19,
+color: 'White'
+};
+//Khởi tạo đối tượng PersonNam
+var PersonNam= {
+name: 'Nam',
+age: 20,
+color: 'Black'
+};
+//Khởi tạo đối tượng PersonSon
+var PersonSon= {
+name: 'Son',
+age: 21,
+color: 'Blue'
+};
+
+
+// Hàm tạo cho các đối tượng Person
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+  this.nationality = "English";
+}
+// Tạo 2 đối tượng Person
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+// Hiển thị
+document.write
+("My father is " + myFather.nationality + ". My mother is " + myMother.nationality); 
+
+
+
+// Constructor function
+function DongVat(name, so_chan) {
+    this.name = name;
+    this.so_chan = so_chan;
+}
+ 
+let conTrau = new DongVat('Con Trau', 4);
+let conGa = new DongVat('Con Ga', 2);
+    </script>
+</body>
+</html>

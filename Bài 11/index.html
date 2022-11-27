@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var array_name = ["item1", "item2", "item3"];
+        // var firstValue = array_name[0];
+        // console.log(firstValue);
+        // var array_name = new Array('JavaScript', 'PHP', 'Java');
+        // console.log(array_name);
+
+
+        // truy xuat mot phan tu cua mang nhu sau :
+        // let toy = cars[0];
+        // cars[3] = 'Huynhdai'
+
+
+        // do dai cua mang nhu sau :
+        // let countOfCars = cars.length // 4
+
+
+        // them phan tu vao mang nhu sau :
+        // cars.push('kia');
+        // console.log(cars[cars.length - 1]); // kia
+        // xoa phan tu cua mang nhu sau :
+        // cars.length
+        // let last = cars.pop()
+        // cars.length
+
+        // sap xep mang nhu sau:
+        
+        // let arr = ['Toyota', 'Subaru', 'BMW']
+        // document.write(arr, sort() + "<br>")
+        // document.write(arr, reverse());
+
+        let points = [40,100,1,5,25,10]
+        points.sort(function(a,b) { 
+            return a - b
+        })
+        document.write(points + "<br>");
+        points.sort(function(a,b) {
+            return b - a
+        })
+        document.write(points);
+    </script>
+</body>
+</html>

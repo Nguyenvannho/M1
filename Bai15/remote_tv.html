@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Remote {
+            constructor(id, tv) {
+                this.id = id;
+                this.tv = tv;
+            }
+            setChannel(channel) {
+                this.tv.channel = channel;
+            }
+            setVolume(volume) {
+                this.tv.volume = volume;
+            }
+        }
+        class TV {
+            status;
+            constructor(channel, volume) {
+                this.channel = channel;
+                this.volume = volume;
+            }
+            getStatus() {
+                if (this.status) {
+                    alert("TIVI dang bat roi")
+                } else {
+                    alert("TIVI dang tat roi")
+                }
+            }
+            turnOn() {
+                return this.status = true;
+            }
+            turnOff() {
+                return this.status = false;
+            }
+            getChannelTV() {
+                return this.channel
+            }
+            getVolumeTV() {
+                return this.volume
+            }
+            setChannelTV(new_channel) {
+                this.channel = new_channel
+            }
+            setVolumeTV(new_volume) {
+                this.volume = new_volume
+            }
+        }
+        let Sony = new TV(3, 10)
+        let remote1 = new Remote(1, Sony);
+        Sony.turnOn();
+        Sony.getStatus();
+        Sony.setChannelTV(7);
+        console.log(Sony.getChannelTV());
+
+        remote1.setChannel(3);
+        remote1.setVolume(12);
+        console.log(Sony.getChannelTV());
+        console.log(Sony.getVolumeTV());
+
+    </script>
+</body>
+
+</html>

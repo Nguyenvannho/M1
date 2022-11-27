@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let HCN = function(ts_dai,ts_rong) {
+            this.chieu_dai = ts_dai;
+            this.chieu_rong = ts_rong;
+        
+            // getter: tra ve gia tri thuoc tinh
+            this.getdien_tich = function() {
+                let dien_tich = this.chieu_dai * this.chieu_rong
+                return dien_tich ;
+            }
+            this.getchu_vi = function() {
+                let chu_vi = (this.chieu_dai + this.chieu_rong) * 2 
+                return chu_vi ;
+            }
+        }
+            // khoi tao doi tuong :
+            let ket_qua = new HCN(15,25);
+            // goi phuong thuc:
+             // goi phuong thuc
+        
+            // goi phuong thuc tra ve cua chu vi
+            console.log(ket_qua.getdien_tich());
+            console.log(ket_qua.getchu_vi());
+        
+            
+        
+    </script>
+</body>
+</html>

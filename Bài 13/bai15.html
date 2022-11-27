@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5</title>
+</head>
+<body>
+<script>
+    let stringUser1;
+    let stringUser2;
+
+    function initString() {
+        stringUser1 = prompt('Mời bạn nhập chuỗi 1: ');
+        stringUser2 = prompt('Mời bạn nhập chuỗi 2: ');
+    }
+
+    function compare2String() {
+        let i = 0;
+
+        if (stringUser1.length == stringUser2.length) {
+            while ((stringUser1[i] == stringUser2[i]) && (i < stringUser2.length))
+                i++;    
+            if (i == stringUser1.length)
+                alert('Hai chuỗi giống nhau');
+            else
+                alert('Hai chuỗi khác nhau');
+        }
+        else
+            alert('Hai chuỗi khác nhau.')
+    }
+
+
+    function main() {
+        initString();
+        compare2String();
+    }
+
+    main();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 3 :Tính diện tích hình vuông khi biết cạnh a.</p>
+    <label for="dt vuong">Met</label><input type="text" id="dt vuong">
+    <input type="button" value="tính toán" onclick="dtvuong()">
+    <p id="kết quả">kết quả</p>
+    <script>
+        function dtvuong() {
+            let a = document.getElementById("dt vuong").value;
+            let res = document.getElementById("kết quả");
+            if (isNaN(a)) {
+                res.innerHTML = `đầu vào phải là 1 số`
+            } else {
+                res.innerHTML =  `kết quả : ${a*a} m²`
+            }
+        }
+    </script>
+</body>
+</html>

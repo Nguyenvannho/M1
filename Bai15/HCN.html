@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class HCN {
+            constructor(ts_dai,ts_rong){
+                this.chieu_dai = ts_dai;
+                this.chieu_rong = ts_rong;
+            }
+            tinh_chu_vi() {
+                let chu_vi = (this.chieu_dai + this.chieu_rong) * 2;
+                return chu_vi;
+            }
+            tinh_dien_tich() {
+                let dien_tich = (this.chieu_dai * this.chieu_rong);
+                return dien_tich;
+            }
+            hien_thi(){
+                console.log("Chieu dai : " + this.chieu_dai);
+                console.log("Chieu rong : " + this.chieu_rong);
+                console.log("Chu vi : " + this.tinh_chu_vi());
+                console.log("Dien tich : " + this.tinh_dien_tich());
+            }
+        }
+        let hcn1 = new HCN(20,10);
+        hcn1.hien_thi();
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>    
+  /**
+   * Đề bài: Viết chương trình nhập vào chiều cao, chiều ngang của hình chữ nhật.
+   * Vẽ hình chữ nhật đặc dấu sao (*) có kích thước đã nhập.
+   */
+  function main() {
+    const chieuDai = Number(prompt("Nhập chiều dài", 1))
+    const chieuRong = Number(prompt("Nhập chiều rộng", 1))
+    let canhDai = ''
+
+    for (let j = 1; j <= chieuRong; j++) {
+      canhDai += '*'
+    }
+
+    for (let i = 1; i <= chieuDai; i++) {
+      document.write(canhDai)
+    }
+  }
+  main()
+</script>
