@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <script>
-        msg = 'codegym';
-for(var x = -2; x < msg.length - 2; x++)
+  var array = [5,3,4,1];
+
+for(var x=0; x<array.length; x++)
 {
-    if(msg.length == 3)
+    for(var y=array.length-1; y>x; y--)
     {
-        for (var i = 2; i < 7; i++)
+         if(array[x] > array[y])
         {
-            console.log(i);
-        }
-    }
-    else
-    {
-        for (var i = msg.length;  i > (msg.length - 2); i--)
-        {
-            console.log(i);
+            var temp = array[y];
+            array[y] = array[x];
+            array[x] = temp;
         }
     }
 }
+console.log(array);
     </script>
 </body>
-
 </html>

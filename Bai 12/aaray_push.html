@@ -8,17 +8,37 @@
 </head>
 <body>
     <script>
-        var arrs = ["code"];
-        arrs.push("Gym");
-        console.log(arrs);
-        var students = [];
-        var student = {
-            id:1,
-            name:'Nguyen Van A',
-            address :'Ha Loi',
+        // var arrs = ["code"];
+        // arrs.push("Gym");
+        // console.log(arrs);
+        // var students = [];
+        // var student = {
+        //     id:1,
+        //     name:'Nguyen Van A',
+        //     address :'Ha Loi',
+        // }
+        // students.push(student);
+        // console.log(students);
+        
+function plusMinus(arr) {
+    // Write your code here
+    let so_duong =0;
+    let so_am =0;
+    let so_kh = 0;
+// duyệt vòng lặp
+    for(var i = 0; i <arr.length;i++) {
+        if(arr[i] > 0) {
+            so_duong++
+        }else if(arr[i] < 0) {
+            so_am++;
+        }else{
+            so_kh++;
         }
-        students.push(student);
-        console.log(students);
+    }
+    console.log( (so_duong / arr.length).toFixed(6) )
+    console.log( (so_am / arr.length).toFixed(6) )
+    console.log( (so_kh / arr.length).toFixed(6) )
+}
     </script>
 </body>
 </html>
