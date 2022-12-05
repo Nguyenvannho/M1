@@ -1,254 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sach cau thu manu</title>
+    <link rel="stylesheet" href="main.css">
 </head>
+<style>
+</style>
 <body>
     <h1>Danh Sách Tất Cả Cầu Thủ Giải Bóng Đá Hàng Đầu Thế Giới...!!!</h1>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuN1TEZA1yuksD08bOTGgOccISOn039lt3rw&usqp=CAU">
+    <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/e/e3/2022_FIFA_World_Cup.svg/642px-2022_FIFA_World_Cup.svg.png" width="500px" height="300px">
+    <img src="https://cdnimg.vietnamplus.vn/uploaded/mzdic/2022_03_30/worldcup20223003.jpg" width="500px" height="300px>
+alt=">
+    <img src="https://image.thanhnien.vn/1200x630/Uploaded/2022/cjhwpdhnw/2019_09_04/qatar-afp-logo1_rmuw.jpg" width="450px" height="300">
+
     <table style=" border: 1px solid black; width: 700px; float: right">
-        <link rel="stylesheet" href="main.css">
-    <tr>
-        <th style="font-size: 40px" colspan="10">Danh Sách Các Cầu Thủ </th>
-    </tr>
-    <tr>
-        <th>Số thứ tự</th>
-        <th>Họ tên</th>
-        <th>Ngày sinh</th>
-        <th>Giới tính</th>
-        <th>Quốc tịch</th>
-        <th>Ảnh</th>
-        <th>Tùy chọn</th>
+        <thead>
+            <tr>
+                <th style="font-size: 40px" colspan="10">Danh Sách Các Cầu Thủ </th>
+            </tr>
+            <tr>
+                <th>Số thứ tự</th>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Quốc tịch</th>
+                <th>Ảnh</th>
 
-    </tr>
-    <tbody id="list-student">
-    </tbody>
-</table>
+                <th>Tùy chọn</th>
 
-<table border="1" style="width: 500px; height: 300px" ;>
-    <tr id="id1">
-        <th colspan="2"> Thông Tin Các Cầu Thủ</th>
-    </tr>
+            </tr>
+        </thead>
 
-    <tr>
-        <th>Số thứ tự</th>
-        <td><input type="number" id="id"></td>
+        <tbody id="list-student">
 
-    </tr>
-    <tr>
-        <th>Họ tên</th>
-        <td><input type="text" id="fullname"></td>
-    </tr>
-    <tr>
-        <th>Ngày sinh</th>
-        <td><input type="text" id="date"></td>
-    </tr>
-    <tr>
-        <th>Giới tính</th>
-        <td><input type="text" id="gender"></td>
-    </tr>
-    <tr>
-        <th>Quốc tịch</th>
-        <td><input type="text" id="grade"></td>
-    </tr>
-    <tr>
-        <th>Ảnh cầu thủ</th>
-        <td><input type="text" id="img"></td>
-    </tr>
-    <tr>
-        <th></th>
-        <td>
-            <button style="background-color: limegreen" id="add" onclick="addStudent()">Add</button>
-            <button style="background-color: gold" id="edit" onclick="updateStudent()">Save</button>
-        </td>
-    </tr>
-</table>
+        </tbody>
+    </table>
+
+    <table border="1" style="width: 500px; height: 300px" ;>
+        <tr id="id1">
+            <th colspan="2"> Thông Tin Các Cầu Thủ</th>
+        </tr>
+
+        <tr>
+            <th>Số thứ tự</th>
+            <td><input type="number" id="id"></td>
+
+        </tr>
+        <tr>
+            <th>Họ tên</th>
+            <td><input type="text" id="fullname"></td>
+        </tr>
+        <tr>
+            <th>Ngày sinh</th>
+            <td><input type="date" id="date"></td>
+        </tr>
+        <tr>
+            <th>Giới tính</th>
+            <td><input type="text" id="gender"></td>
+        </tr>
+        <tr>
+            <th>Quốc tịch</th>
+            <td><input type="text" id="grade"></td>
+        </tr>
+        <tr>
+            <th>Ảnh cầu thủ</th>
+            <td><input type="text" id="img"></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <button style="background-color: limegreen" id="add" onclick="addStudent()">Save</button>
+
+            </td>
+        </tr>
+    </table>
 </body>
-</html>
+
+
 <script>
+    let students = [];
+    let edit_id = -1;
+
     class Student {
-    constructor (id, fullname, date, gender, grade, img) {
-        this.id= id;
-        this.fullname= fullname;
-        this.date= date;
-        this.gender= gender;
-        this.grade= grade;
-        this.img = img;
-    }
-    getID() {
-        return this.id;
-    }
-    getFullname() {
-        return this.fullname;
-    }
-    getDate() {
-        return this.date;
-    }
-    getGender(){
-        return this.gender;
-    }
-    getGrade() {
-        return this.grade;
-
-    }
-    getImg() {
-        return this.img;
-    }
-    setID(id) {
-        this.id=id;
-    }
-    setFullname(fullname) {
-        this.fullname=fullname;
-    }
-    setDate(date) {
-        this.date=date;
-    }
-    setGender(gender){
-        this.gender=gender;
-    }
-    setGrade(grade) {
-        this.grade=grade;
-    }
-    setImg(img){
-        this.img=img;
-    }
-
-    edit(id, fullname, date,gender, grade, img){
-        this.id = id;
-        this.fullname = fullname;
-        this.date = date;
-        this.gender = gender;
-        this.grade = grade;
-        this.img = img
-    }
-}
-
-class StudentManagement {
-    constructor(arr) {
-        this.students = arr;
-    }
-    showList() {
-        let table = '';
-        for (let i = 0; i < this.students.length; i++) {
-
-
-            table += '<tr>';
-            table += '<td>';
-            table += this.students[i].id;
-            table += '</td>';
-
-            table += '<td>';
-            table += this.students[i].fullname;
-            table += '</td>';
-
-            table += '<td>';
-            table += this.students[i].date;
-            table += '</td>';
-
-            table += '<td>';
-            table += this.students[i].gender;
-            table += '</td>';
-
-            table += '<td>';
-            table += this.students[i].grade;
-            table += '</td>';
-
-            table += '<td>';
-            table += '<img width="100px" height="100px" src=" '+this.students[i].img+'">';
-            table += '</td>';
-
-            table += '<td>' +
-                '<button style="background-color: red; color: white "  type="button" onclick="deleteStudent('+i+')">Delete</button> ' +
-                ' <button  style="background-color: orange ; color: white" type="button" onclick="editStudent('+i+')">Edit</button>' +
-                '</td>';
-
-            table += '</tr>';
+        constructor(id, fullname, date, gender, grade, img) {
+            this.id = id;
+            this.fullname = fullname;
+            this.date = date;
+            this.gender = gender;
+            this.grade = grade;
+            this.img = img;
         }
-        document.getElementById('list-student').innerHTML = table;
     }
 
-    addStudent(student) {
-        this.students.push(student);
+    function emptyInput() {
+        document.getElementById('id').value = '';
+        document.getElementById('fullname').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('gender').value = '';
+        document.getElementById('grade').value = '';
+        document.getElementById('img').value = '';
+
     }
 
-    delete(id) {
-        this.students.splice(id, 1);
+    function addStudent() {
+        let id = document.getElementById('id').value;
+        let fullname = document.getElementById('fullname').value;
+        let date = document.getElementById('date').value;
+        let gender = document.getElementById('gender').value;
+        let grade = document.getElementById('grade').value;
+        let img = document.getElementById('img').value;
+
+        let student = new Student(id, fullname, date, gender, grade, img);
+
+        // them vao mang student
+        if(edit_id == -1) {
+            students.push(student);
+        }else{
+            students[edit_id].id = id;
+            students[edit_id].fullname = fullname;
+            students[edit_id].date = date;
+            students[edit_id].gender = gender;
+            students[edit_id].grade = grade;
+            students[edit_id].img = img;
+        };
+
+       
+        // hien thi danh sach :
+        showList();
+
+        // lam rong form :
+        emptyInput();
+    }
+    function showList() {
+        let html = "";
+        for(let i=0; i<students.length; i++){
+            html += '<tr>';
+                html += '<td>'+ students[i].id +'</td>';
+                html += '<td>'+ students[i].fullname +'</td>';
+                html += '<td>' + students[i].date +'</td>';
+                html += '<td>' + students[i].gender + '</td>';
+                html += '<td>' + students[i].grade + '</td>';
+                html += '    <td><img src="'+ students[i].img +'" alt="" border=3 height=150 width=150></img></th>';
+            
+                html += '<td>';
+                    html += '<a href="#" onclick="editStudent(' + i + ')">edit</a>' + '&nbsp' + "<br>";
+                    html += '<a href="#" onclick="deleteStudent(' + i + ')">delete</a> ';
+                html += '</td>';
+            html += '</tr>';
+        }
+        document.getElementById('list-student').innerHTML = html;
     }
 
-    findStudentById(id){
-        return this.students[id];
+    function editStudent(id) {
+        edit_id = id;
+        let student = students[id];
+        // dua du lieu vao form 
+        document.getElementById('id').value = student.id;
+        document.getElementById('fullname').value = student.fullname;
+        document.getElementById('date').value = student.date;
+        document.getElementById('gender').value = student.gender;
+        document.getElementById('grade').value = student.grade;
+        document.getElementById('img').value = student.img;
     }
-
-    edit(student,id, fullname, date, gender, grade, img){
-        student.edit(id, fullname, date,gender, grade, img);
+    
+    // console.log(student);
+    function deleteStudent(id) {
+        // let student = students[id];
+        students.splice(id,1);
+       // hien thi danh sach :
+       showList();
     }
-
-}
-
-let student = new Student('011', "Christian Eriksen", '17/02/1992', 'Nam','Đan Mạch','data:image/jpeg;base64,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');
-let student1 = new Student('012','Lisandro Martínez','18/01/1998','Nam', 'Argentina','https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt5b612eca83540f27/62e26c3888ccd83f7530526e/Lisandro_Martinez_Manchester_United_(1)_copy.jpg');
-let student2 = new Student('013','Marcus Rashford','31/10/1997','Nam','Vương Quốc Anh','https://media-cdn-v2.laodong.vn/storage/newsportal/2020/10/10/843714/Rash.jpg');
-let arr =[student, student1, student2];
-let manage = new StudentManagement(arr);
-
-function addStudent(){
-    let id = document.getElementById('id').value;
-    let name = document.getElementById('fullname').value;
-    let date = document.getElementById('date').value;
-    let gender = document.getElementById('gender').value;
-    let grade = document.getElementById('grade').value;
-    let img = document.getElementById('img').value;
-
-    let student = new Student(id,name,date,gender,grade,img);
-    manage.addStudent(student);
-    manage.showList();
-    clear();
-}
-
-function clear(){
-    document.getElementById('id').value = '';
-    document.getElementById('fullname').value = '';
-    document.getElementById('date').value = '';
-    document.getElementById('gender').value = '';
-    document.getElementById('grade').value = '';
-    document.getElementById('img').value= '';
-}
-
-function deleteStudent(id) {
-        manage.delete(id);
-        manage.showList();
-}
-
-let studentId = 0;
-function editStudent(id){
-    let student = manage.findStudentById(id);
-    document.getElementById('id').value = student.id;
-    document.getElementById('fullname').value = student.fullname;
-    document.getElementById('date').value = student.date;
-    document.getElementById('gender').value = student.gender;
-    document.getElementById('grade').value = student.grade;
-    document.getElementById('img').value = student.img;
-
-    studentId = id;
-}
-
-function updateStudent(){
-    let id = document.getElementById('id').value;
-    let name = document.getElementById('fullname').value;
-    let date = document.getElementById('date').value;
-    let gender = document.getElementById('gender').value;
-    let grade = document.getElementById('grade').value;
-    let img = document.getElementById('img').value;
-
-    let student = manage.findStudentById(studentId);
-    manage.edit(student,id,name,date,gender,grade, img);
-    manage.showList();
-    clear();
-}
-
-manage.showList();
+    
+    // console.log(students);
+    
 
 </script>
+
+</html>

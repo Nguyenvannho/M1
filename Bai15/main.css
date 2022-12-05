@@ -1,6 +1,6 @@
 #logo{
-    width: 100%;
-    height: 130px;
+    width: 150%;
+    height: 150px;
 }
 table{
     background-color: aliceblue;
@@ -8,7 +8,7 @@ table{
 #id1{
     text-align:center; font-size: 25px;
     background-color: cornflowerblue;
-    color: brown;
+    color: yellow;
 
 }
 h1{
@@ -19,4 +19,5 @@ h1{
 
 th , td {
     text-align: center;
+    
 }
