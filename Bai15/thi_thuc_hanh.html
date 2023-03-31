@@ -8,22 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="canvas" width="500" height="500"></canvas>
+    <!-- <canvas id="canvas" width="500" height="500"></canvas> -->
     <script>
         // bài 1:
-        function tim_gia_tri_lon_nhat(a, b, c) {
-            let max;
-            if (a > b && a > c) {
-                max = a;
-            } else if (b > a && b > c) {
-                max = b;
-            } else {
-                max = c
-            }
-            return max;
-        }
-        let ket_qua = tim_gia_tri_lon_nhat(8, 9,10);
-        console.log(ket_qua)
+        // function tim_gia_tri_lon_nhat(a, b, c) {
+        //     let max;
+        //     if (a > b && a > c) {
+        //         max = a;
+        //     } else if (b > a && b > c) {
+        //         max = b;
+        //     } else {
+        //         max = c
+        //     }
+        //     return max;
+        // }
+        // let ket_qua = tim_gia_tri_lon_nhat(8, 9,10);
+        // console.log(ket_qua)
 
         // bài 2:
 
@@ -39,47 +39,47 @@
             }
         }
         let arr = [1, 7, 3, 4, 5];
-        console.log(tryRemoveFromArray(arr, 2));
+        console.log(tryRemoveFromArray(arr, 3));
         
 
         // bài 3:
-        var st1 = ['su','toan','ly','hoa'];
-        var st2 = ['dia','sinh','van','ngoai ngu'];
-        var c ;
-        if (st1.length !== st2.length) {
-            c = false;
-        }
-        else {
-            for (let i = 0; i < st1.length; i++) {
-                if (st1[i] !== st2[i]) {
-                   c = false;
-                    break;
-                }
-                c = true;
-            }
-        }
-        alert(c);
+        // var st1 = ['su','toan','ly','hoa'];
+        // var st2 = ['dia','sinh','van','ngoai ngu'];
+        // var c ;
+        // if (st1.length !== st2.length) {
+        //     c = false;
+        // }
+        // else {
+        //     for (let i = 0; i < st1.length; i++) {
+        //         if (st1[i] !== st2[i]) {
+        //            c = false;
+        //             break;
+        //         }
+        //         c = true;
+        //     }
+        // }
+        // alert(c);
 
 
 
         // bài 4 :
-        class Rectangle {
-            constructor(x, y, chieu_dai, chieu_rong, color) {
-                this.x = x;
-                this.y = y;
-                this.width = chieu_dai;
-                this.height = chieu_rong;
-                this.color = color;
-            }
-            render() {
-                var c = document.getElementById("canvas");
-                var ctx = c.getContext("2d");
-                ctx.fillStyle = this.color;
-                ctx.fillRect(this.x, this.y, this.width, this.height);
-            }
-        }
-        var hinhchunhat = new Rectangle(10, 10, 200, 100, '#000000')
-        hinhchunhat.render();
+        // class Rectangle {
+        //     constructor(x, y, chieu_dai, chieu_rong, color) {
+        //         this.x = x;
+        //         this.y = y;
+        //         this.width = chieu_dai;
+        //         this.height = chieu_rong;
+        //         this.color = color;
+        //     }
+        //     render() {
+        //         var c = document.getElementById("canvas");
+        //         var ctx = c.getContext("2d");
+        //         ctx.fillStyle = this.color;
+        //         ctx.fillRect(this.x, this.y, this.width, this.height);
+        //     }
+        // }
+        // var hinhchunhat = new Rectangle(10, 10, 200, 100, '#000000')
+        // hinhchunhat.render();
     </script>
 </body>
 

@@ -5,17 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sach cau thu manu</title>
+    <title>Danh sach cau thu ngoai hang</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <style>
 </style>
 <body>
-    <h1>Danh Sách Tất Cả Cầu Thủ Giải Bóng Đá Hàng Đầu Thế Giới...!!!</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/e/e3/2022_FIFA_World_Cup.svg/642px-2022_FIFA_World_Cup.svg.png" width="500px" height="300px">
-    <img src="https://cdnimg.vietnamplus.vn/uploaded/mzdic/2022_03_30/worldcup20223003.jpg" width="500px" height="300px>
-alt=">
-    <img src="https://image.thanhnien.vn/1200x630/Uploaded/2022/cjhwpdhnw/2019_09_04/qatar-afp-logo1_rmuw.jpg" width="450px" height="300">
+    <h1>Danh Sách Tất Cả Cầu Thủ Ngoại Hạng Anh...!!!</h1>
+  
 
     <table style=" border: 1px solid black; width: 700px; float: right">
         <thead>
@@ -72,8 +69,9 @@ alt=">
         </tr>
         <tr>
             <th></th>
+            
             <td>
-                <button style="background-color: limegreen" id="add" onclick="addStudent()">Save</button>
+                <button style="background-color: rgb(76, 189, 76)" id="add" onclick="addStudent()">Lưu</button>
 
             </td>
         </tr>
@@ -116,7 +114,7 @@ alt=">
 
         let student = new Student(id, fullname, date, gender, grade, img);
 
-        // them vao mang student
+        
         if(edit_id == -1) {
             students.push(student);
         }else{
@@ -129,10 +127,10 @@ alt=">
         };
 
        
-        // hien thi danh sach :
+       
         showList();
 
-        // lam rong form :
+    
         emptyInput();
     }
     function showList() {
@@ -146,10 +144,10 @@ alt=">
                 html += '<td>' + students[i].grade + '</td>';
                 html += '    <td><img src="'+ students[i].img +'" alt="" border=3 height=150 width=150></img></th>';
             
-                html += '<td>';
-                    html += '<a href="#" onclick="editStudent(' + i + ')">edit</a>' + '&nbsp' + "<br>";
-                    html += '<a href="#" onclick="deleteStudent(' + i + ')">delete</a> ';
-                html += '</td>';
+                    html += '<td>';
+                        html += '<a href="#" onclick="editStudent(' + i + ')" class="link-btn">Chỉnh sửa</a>' + '&nbsp' + "<br>";
+                        html += '<a href="#" onclick="deleteStudent(' + i + ')" class="link-btn1">Xóa</a> ';
+                     html += '</td>';
             html += '</tr>';
         }
         document.getElementById('list-student').innerHTML = html;
@@ -158,7 +156,7 @@ alt=">
     function editStudent(id) {
         edit_id = id;
         let student = students[id];
-        // dua du lieu vao form 
+        
         document.getElementById('id').value = student.id;
         document.getElementById('fullname').value = student.fullname;
         document.getElementById('date').value = student.date;
@@ -169,13 +167,13 @@ alt=">
     
     // console.log(student);
     function deleteStudent(id) {
-        // let student = students[id];
+        
         students.splice(id,1);
-       // hien thi danh sach :
+      
        showList();
     }
     
-    // console.log(students);
+    
     
 
 </script>
